@@ -11,55 +11,55 @@
 <body>
     <h1>Contact Form</h1>
     <form id="contact-form">
-        <section id="fname-section">
+        <div id="fname-section">
             <label for="fname">First Name
                 <span class="err" id="err-fname">
                     first name is required
                 </span>
             </label>
             <input type="text" id="fname" name="fname">
-        </section>
-        <section id="lname-section">
+        </div>
+        <div id="lname-section">
             <label for="lname">Last Name
                 <span class="err" id="err-lname">
                     last name is required
                 </span>
             </label>
             <input type="text" id="lname" name="lname">
-        </section>
-        <section id="job-section">
+        </div>
+        <div id="job-section">
             <label for="job">Job Title
                 <span class="err" id="err-job">
                     job title is required
                 </span>
             </label>
             <input type="text" id="job" name="job">
-        </section>
-        <section id="company-section">
+        </div>
+        <div id="company-section">
             <label for="company">Company
                 <span class="err" id="err-company">
                     company is required
                 </span>
             </label>
             <input type="text" id="company" name="company">
-        </section>
-        <section id="url-section">
+        </div>
+        <div id="url-section">
             <label for="url">LinkedIn URL
                 <span class="err" id="err-url">
                     linkedin url is required
                 </span>
             </label>
             <input type="text" id="url" name="url">
-        </section>
-        <section id="email-section">
+        </div>
+        <div id="email-section">
             <label for="email">Email Address
                 <span class="err" id="err-email">
                     email address is required
                 </span>
             </label>
             <input type="text" id="email" name="email">
-        </section>
-        <section id="meet-section">
+        </div>
+        <div id="meet-section">
             <label for="meet">How did we meet?
                 <span class="err" id="err-meet">
                     please select an option
@@ -71,22 +71,22 @@
                     <option value="mint">MinT</option>
                 </select>
             </label>
-        </section>
-        <section id="other-section">
+        </div>
+        <div id="other-section">
             <label for="other">Other (please specify)</label>
             <input type="text" id="other" name="other">
-        </section>
-        <section id="message-section">
+        </div>
+        <div id="message-section">
             <label for="message">Message</label>
             <textarea rows="6" id="message" name="message"></textarea>
-        </section>
-        <section id="mail-section">
+        </div>
+        <div id="mail-section">
             <label for="mail">
                 <input type="checkbox" id="mail" name="mail">
                 Please add me to your mailing list
             </label>
-        </section>
-        <section id="format-section">
+        </div>
+        <div id="format-section">
             <label for="html">Choose an email format:
                 <input type="radio" id="html" value="html" name="format">HTML
             </label>
@@ -96,7 +96,7 @@
             <span class="err" id="err-format">
                 please choose an email format
             </span>
-        </section>
+        </div>
         <button type="submit" id="submit-button">Submit</button>
     </form>
 </body>
