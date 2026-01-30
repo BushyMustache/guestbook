@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook Contact Form</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/guestbook.js" defer></script>
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form id="contact-form">
+        <section id="fname-section">
+            <label for="fname">First Name
+                <span class="err" id="err-fname">
+                    first name is required
+                </span>
+            </label>
+            <input type="text" id="fname" name="fname">
+        </section>
+        <section id="lname-section">
+            <label for="lname">Last Name
+                <span class="err" id="err-lname">
+                    last name is required
+                </span>
+            </label>
+            <input type="text" id="lname" name="lname">
+        </section>
+        <section id="job-section">
+            <label for="job">Job Title
+                <span class="err" id="err-job">
+                    job title is required
+                </span>
+            </label>
+            <input type="text" id="job" name="job">
+        </section>
+        <section id="company-section">
+            <label for="company">Company
+                <span class="err" id="err-company">
+                    company is required
+                </span>
+            </label>
+            <input type="text" id="company" name="company">
+        </section>
+        <section id="url-section">
+            <label for="url">LinkedIn URL
+                <span class="err" id="err-url">
+                    linkedin url is required
+                </span>
+            </label>
+            <input type="text" id="url" name="url">
+        </section>
+        <section id="email-section">
+            <label for="email">Email Address
+                <span class="err" id="err-email">
+                    email address is required
+                </span>
+            </label>
+            <input type="text" id="email" name="email">
+        </section>
+        <section id="meet-section">
+            <label for="meet">How did we meet?
+                <span class="err" id="err-meet">
+                    please select an option
+                </span>
+                <select id="meet" name="meet">
+                    <option value="none">Please Select</option>
+                    <option value="hack">Hackathon</option>
+                    <option value="intern">Internship</option>
+                    <option value="mint">MinT</option>
+                </select>
+            </label>
+        </section>
+        <section id="other-section">
+            <label for="other">Other (please specify)</label>
+            <input type="text" id="other" name="other">
+        </section>
+        <section id="message-section">
+            <label for="message">Message</label>
+            <textarea rows="6" id="message" name="message"></textarea>
+        </section>
+        <section id="mail-section">
+            <label for="mail">
+                <input type="checkbox" id="mail" name="mail">
+                Please add me to your mailing list
+            </label>
+        </section>
+        <section id="format-section">
+            <label for="html">Choose an email format:
+                <input type="radio" id="html" value="html" name="format">HTML
+            </label>
+            <label for="text">
+                <input type="radio" id="text" value="text" name="format">Text
+            </label>
+            <span class="err" id="err-format">
+                please choose an email format
+            </span>
+        </section>
+        <button type="submit" id="submit-button">Submit</button>
+      
+    </form>
+</body>
+</html>
