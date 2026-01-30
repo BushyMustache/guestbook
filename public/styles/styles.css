@@ -23,7 +23,6 @@ form {
         'mls mls mls mls mls mls'
         'fs fs fs fs fs fs'
         'b b b b b b'
-        'lks lks lks lks lks lks';
     row-gap: 10px;
 }
 
@@ -101,10 +100,6 @@ textarea {
 
 #format-section {
     grid-area: fs
-}
-
-#link-section {
-    grid-area: lks;
 }
 
 fieldset {
