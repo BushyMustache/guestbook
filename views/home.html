@@ -36,17 +36,13 @@
             <input type="text" id="job" name="job">
         </div>
         <div id="company-section">
-            <label for="company">Company
-                <span class="err" id="err-company">
-                    company is required
-                </span>
-            </label>
+            <label for="company">Company</label>
             <input type="text" id="company" name="company">
         </div>
         <div id="url-section">
             <label for="url">LinkedIn URL
                 <span class="err" id="err-url">
-                    linkedin url is required
+                    linkedin format is incorrect
                 </span>
             </label>
             <input type="text" id="url" name="url">
@@ -54,7 +50,7 @@
         <div id="email-section">
             <label for="email">Email Address
                 <span class="err" id="err-email">
-                    email address is required
+                    <!-- TEXT PLACEHOLDER-->
                 </span>
             </label>
             <input type="text" id="email" name="email">
@@ -62,18 +58,23 @@
         <div id="meet-section">
             <label for="meet">How did we meet?
                 <span class="err" id="err-meet">
-                    please select an option or add to other
+                    please select an option
                 </span>
-                <select id="meet" name="meet">
+                <select id="meet" name="meet" onclick=otherSelected()>
                     <option value="none">Please Select</option>
                     <option value="hack">Hackathon</option>
                     <option value="intern">Internship</option>
-                    <option value="mint">MinT</option>
+                    <option value="minT">MinT</option>
+                    <option value="other">Other</option>
                 </select>
             </label>
         </div>
         <div id="other-section">
-            <label for="other">Other (please specify)</label>
+            <label for="other">Other (please specify)
+                <span class="err" id="err-other">
+                    fill in the blank or choose another option
+                </span>
+            </label>
             <input type="text" id="other" name="other">
         </div>
         <div id="message-section">
@@ -82,7 +83,7 @@
         </div>
         <div id="mail-section">
             <label for="mail">
-                <input type="checkbox" id="mail" name="mail">
+                <input type="checkbox" id="mail" name="mail" onclick=mailChecked()>
                 Please add me to your mailing list
             </label>
         </div>

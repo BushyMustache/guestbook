@@ -119,6 +119,10 @@ button {
     width: 7%;
 }
 
+#email-section, #other-section {
+    display: none;
+}
+
 .err {
     color: darkred;
     display: none;
