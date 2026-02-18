@@ -1,25 +1,47 @@
-// Import the express module
 import express from 'express';
 
-// Create an express application
 const app = express();
 
-// Define a port number where server will listen
 const PORT = 3002;
 
-// Enable static file serving
 app.use(express.static('public'));
 
-// Define our main root ('/')
+app.use(express.urlencoded({ extended: true }));
+
+const guestbook = [];
+
 app.get('/', (req, res) => {
     res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
-app.get('/submit-form', (req, res) => {
+app.post('/submit-form', (req, res) => {
+    
+    // Create a JSON object to store the order data
+    const guest = {
+        fname: req.body.fname,
+        lname: req.body.lname,
+        job: req.body.job,
+        company: req.body.company ? req.body.company : "none",
+        url: req.body.url ? req.body.url : "none",
+        mail: req.body.mail,
+        email: req.body.email ? req.body.email : "none",
+        meet: req.body.meet,
+        other: req.body.other ? req.body.other : "none",
+        message: req.body.message ? req.body.message : "none",
+        format: req.body.format,
+        timestamp: new Date()
+    };
+
+    // Add order object to orders array
+    guestbook.push(guest);
+    
     res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
-// Start server and listen on designative port
+app.get('/admin', (req, res) => {
+    res.send(guestbook);
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running at 
         http://localhost:${PORT}`);

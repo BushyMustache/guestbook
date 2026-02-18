@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Contact Form</h1>
-    <form id="contact-form" action="/submit-form">
+    <form id="contact-form" action="/submit-form" method="post">
         <div id="fname-section">
             <label for="fname">First Name
                 <span class="err" id="err-fname">
@@ -62,9 +62,9 @@
                 </span>
                 <select id="meet" name="meet" onclick=otherSelected()>
                     <option value="none">Please Select</option>
-                    <option value="hack">Hackathon</option>
-                    <option value="intern">Internship</option>
-                    <option value="minT">MinT</option>
+                    <option value="hackathon">Hackathon</option>
+                    <option value="internship">Internship</option>
+                    <option value="MinT">MinT</option>
                     <option value="other">Other</option>
                 </select>
             </label>
