@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Contact Form</h1>
-    <form id="contact-form">
+    <form id="contact-form" action="/submit-form">
         <div id="fname-section">
             <label for="fname">First Name
                 <span class="err" id="err-fname">
@@ -98,6 +98,11 @@
                 please choose an email format
             </span>
         </div>
+        <div id="link-section">Github Repository: [
+            <a href="https://github.com/BushyMustache/guestbook">
+                https://github.com/BushyMustache/guestbook
+            </a>
+        ]</div>
         <button type="submit" id="submit-button">Submit</button>
     </form>
 </body>

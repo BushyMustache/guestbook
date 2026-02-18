@@ -22,7 +22,8 @@ form {
         'bs bs bs bs bs bs'
         'mls mls mls mls mls mls'
         'fs fs fs fs fs fs'
-        'b b b b b b';
+        'b b b b b b'
+        'ls ls ls ls ls ls';
     row-gap: 10px;
 }
 
@@ -64,6 +65,10 @@ form {
 
 #bottom-section {
     grid-area: bs;
+}
+
+#link-section {
+    grid-area: ls;
 }
 
 h1 {

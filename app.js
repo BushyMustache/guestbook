@@ -5,7 +5,7 @@ import express from 'express';
 const app = express();
 
 // Define a port number where server will listen
-const PORT = 3000;
+const PORT = 3002;
 
 // Enable static file serving
 app.use(express.static('public'));
@@ -13,6 +13,10 @@ app.use(express.static('public'));
 // Define our main root ('/')
 app.get('/', (req, res) => {
     res.sendFile(`${import.meta.dirname}/views/home.html`);
+});
+
+app.get('/submit-form', (req, res) => {
+    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
 // Start server and listen on designative port
