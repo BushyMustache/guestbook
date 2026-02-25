@@ -3,107 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guestbook Contact Form</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/guestbook.js" defer></script>
-    <link rel="icon" href="images/form-icon.png">
+    <title>John Baltazar's Resume</title>
+    <link rel="stylesheet" href="styles/resume-styles.css">
+    <link rel="icon" href="images/resume-icon.jpg">
 </head>
 <body>
-    <h1>Contact Form</h1>
-    <form id="contact-form" action="/submit-form" method="post">
-        <div id="fname-section">
-            <label for="fname">First Name
-                <span class="err" id="err-fname">
-                    first name is required
-                </span>
-            </label>
-            <input type="text" id="fname" name="fname">
-        </div>
-        <div id="lname-section">
-            <label for="lname">Last Name
-                <span class="err" id="err-lname">
-                    last name is required
-                </span>
-            </label>
-            <input type="text" id="lname" name="lname">
-        </div>
-        <div id="job-section">
-            <label for="job">Job Title
-                <span class="err" id="err-job">
-                    job title is required
-                </span>
-            </label>
-            <input type="text" id="job" name="job">
-        </div>
-        <div id="company-section">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company">
-        </div>
-        <div id="url-section">
-            <label for="url">LinkedIn URL
-                <span class="err" id="err-url">
-                    linkedin format is incorrect
-                </span>
-            </label>
-            <input type="text" id="url" name="url">
-        </div>
-        <div id="email-section">
-            <label for="email">Email Address
-                <span class="err" id="err-email">
-                    <!-- TEXT PLACEHOLDER-->
-                </span>
-            </label>
-            <input type="text" id="email" name="email">
-        </div>
-        <div id="meet-section">
-            <label for="meet">How did we meet?
-                <span class="err" id="err-meet">
-                    please select an option
-                </span>
-                <select id="meet" name="meet" onclick=otherSelected()>
-                    <option value="none">Please Select</option>
-                    <option value="hackathon">Hackathon</option>
-                    <option value="internship">Internship</option>
-                    <option value="MinT">MinT</option>
-                    <option value="other">Other</option>
-                </select>
-            </label>
-        </div>
-        <div id="other-section">
-            <label for="other">Other (please specify)
-                <span class="err" id="err-other">
-                    fill in the blank or choose another option
-                </span>
-            </label>
-            <input type="text" id="other" name="other">
-        </div>
-        <div id="message-section">
-            <label for="message">Message</label>
-            <textarea rows="6" id="message" name="message"></textarea>
-        </div>
-        <div id="mail-section">
-            <label for="mail">
-                <input type="checkbox" id="mail" name="mail" onclick=mailChecked()>
-                Please add me to your mailing list
-            </label>
-        </div>
-        <div id="format-section">
-            <label for="html">Choose an email format:
-                <input type="radio" id="html" value="html" name="format">HTML
-            </label>
-            <label for="text">
-                <input type="radio" id="text" value="text" name="format">Text
-            </label>
-            <span class="err" id="err-format">
-                please choose an email format
-            </span>
-        </div>
-        <div id="link-section">Github Repository: [
-            <a href="https://github.com/BushyMustache/guestbook">
-                https://github.com/BushyMustache/guestbook
-            </a>
-        ]</div>
-        <button type="submit" id="submit-button">Submit</button>
-    </form>
+    <nav>
+        <a class="nav-button" href="/" role="button">Home</a>
+        <a class="nav-button" href="/contact-form" role="button">Contact Form</a>
+        <a class="nav-button" href="/admin" role="button">Admin Page</a>
+        <a class="nav-button" href="https://github.com/BushyMustache/guestbook" role="button">Github Repo</a>
+        <a class="nav-button" href="https://www.linkedin.com/in/john-matheu-baltazar-6233263a5/" role="button">LinkedIn Profile</a>
+    </nav>
+    <main id="container">
+        <header>
+            <h1>John Baltazar</h1>
+        </header>
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>I'm a Software Development student in Green River Community College currently on the journey
+               to obtain a Bachelors. I'm planning to join the Mentors in Tech (MinT) program to learn more about the job-seeking 
+               society. I work as meat wrapper in retail on the side for financial reasons.
+            </p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Green River College - Auburn, WA</p>
+            <p>Bachelor of Software Development - In Progress</p>
+            <p>Relevant Coursework:</p>
+            <ul>
+                <li>Front-End Web Development</li>
+                <li>Back-End Web Development</li>
+                <li>Object-Oriented Programming</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>List of Skills</h2>
+            <ul>
+                <li>Languages: Java, Basic SQL, JavaScript</li>
+                <li>Web: HTML/CSS, JSON</li>
+                <li>Tools: Git, VS Code</li>
+            </ul>
+        </section>
+        <img src="images/dapper-john.jpg" alt="John in a dapper suit">
+         <footer>
+            <h2>Profile Link</h2>
+            <p>Github:</p>
+            <a id="github-link" href="https://github.com/BushyMustache">https://github.com/BushyMustache</a>
+        </footer>
+    </main>
 </body>
 </html>

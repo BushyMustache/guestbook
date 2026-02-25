@@ -1,0 +1,113 @@
+:root {
+    background-color: darkgrey;
+    padding: 2rem;
+}
+
+body {
+    margin: 0;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+main {
+    max-width: 80%;
+    background-color: rgb(227, 226, 226);
+    margin: 2rem auto;
+    padding: 1rem 1rem;
+
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: 
+    'head head' 
+    'sum im'
+    'edu im'
+    'ski im'
+    'foot im';
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+p, ul, #github-link {
+    font-size: 20px;
+}
+
+#github-link:hover {
+    background-color: yellow;
+    font-size: 21px;
+}
+
+#github-link:focus {
+    color: blue;
+}
+
+header {
+    grid-area: head;
+}
+
+#summary {
+    grid-area: sum;
+}
+
+#education {
+    grid-area: edu;
+}
+
+#skills {
+    grid-area: ski;
+}
+
+img {
+    grid-area: im;
+    margin-left: 50px;
+    width: 75%;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px 5px;
+}
+
+footer {
+    grid-area: foot;
+}
+
+nav {
+    display: flex;
+    align-items: stretch;
+}
+
+.nav-button {
+    border: none;
+    background-color: darkred;
+    border-color: darkred;
+    padding: 0.5rem 0.75rem;
+    border-radius: .25rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-left: 4.5rem;
+    margin-right: 10rem;
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    main {
+        max-width: 50%;
+        letter-spacing: normal;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas: 
+        'head head'
+        'im im'
+        'sum sum'
+        'edu edu'
+        'ski ski'
+        'foot foot';
+    }
+
+    .nav-button {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

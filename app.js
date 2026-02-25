@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/contact-form', (req, res) => {
+    res.render('form');
+});
+
 app.post('/submit-form', (req, res) => {
     
     // Create a JSON object to store the order data
