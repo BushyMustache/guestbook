@@ -6,12 +6,14 @@ const PORT = 3002;
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+
 app.use(express.urlencoded({ extended: true }));
 
 const guestbook = [];
 
 app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
 
 app.post('/submit-form', (req, res) => {
@@ -26,7 +28,7 @@ app.post('/submit-form', (req, res) => {
         mail: req.body.mail,
         email: req.body.email ? req.body.email : "none",
         meet: req.body.meet,
-        other: req.body.other ? req.body.other : "none",
+        other: req.body.other,
         message: req.body.message ? req.body.message : "none",
         format: req.body.format,
         timestamp: new Date()
@@ -35,11 +37,11 @@ app.post('/submit-form', (req, res) => {
     // Add order object to orders array
     guestbook.push(guest);
     
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    res.render('confirmation', { guest });
 });
 
 app.get('/admin', (req, res) => {
-    res.send(guestbook);
+    res.render('admin', { guestbook });
 });
 
 app.listen(PORT, () => {

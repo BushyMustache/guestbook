@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook Submitted</title>
+</head>
+<body>
+    <h1>Thank you for your Submission!</h1>
+    <h2>Submission Details</h2>
+    <p>Name: <%= guest.fname %> <%= guest.lname %></p>
+    <p>Job: <%= guest.job %></p>
+    <p>Company: <%= guest.company %></p>
+    <p>LinkedIn URL: <%= guest.url %></p>
+    <p>Mailing List:
+        <% if (guest.mail === "on") { %>
+        <%=   "checked"   %>
+        <% } else { %>
+        <%=   "unchecked"   %>
+        <% } %>
+    </p>
+    <p>Email: <%= guest.email %></p>
+    <p>Meet: 
+        <% if (guest.meet !== "other") { %>
+        <%=   guest.meet   %>
+        <% } else { %>
+        <%=   guest.other   %>
+        <% } %>
+    </p>
+    <p>Message: <%= guest.message %></p>
+    <p>Format: <%= guest.format %></p>
+    <p>Date/Time: <%= guest.timestamp.toLocaleString() %></p>
+    <a href="/">Back to form</a>
+</body>
+</html>
