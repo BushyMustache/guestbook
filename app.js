@@ -1,5 +1,11 @@
 import express from 'express';
 
+import mysql2 from 'mysql2';
+
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app = express();
 
 const PORT = 3002;
@@ -11,6 +17,23 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
 const guestbook = [];
+
+const pool = mysql2.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+}).promise();
+
+app.get('/db-test', async(req, res) => {
+    try {
+        const guestbook_contacts = await pool.query('SELECT * FROM contacts');
+        res.send(guestbook_contacts[0]);
+    } catch (err) {
+        console.log('Database error: ', err);
+    }
+});
 
 app.get('/', (req, res) => {
     res.render('home');
