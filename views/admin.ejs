@@ -21,11 +21,12 @@
         <a class="nav-button" href="https://github.com/BushyMustache/guestbook" role="button">Github Repo</a>
         <a class="nav-button" href="https://www.linkedin.com/in/john-matheu-baltazar-6233263a5/" role="button">LinkedIn Profile</a>
     </nav>
-    <h1>The Guestbook</h1>
+    <%- include('header') %>
     <table id="guest-list" class="display">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>Job</th>
                 <th>Company</th>
                 <th>LinkedIn</th>
@@ -34,16 +35,28 @@
                 <th>Meet</th>
                 <th>Message</th>
                 <th>Format</th>
-                <th>Timestamp</th>
             </tr>
         </thead>
         <tbody>
         <% guestbook.forEach(guest => { %>
             <tr>
-                <td><%= guest.fname %> <%= guest.lname %></td>
+                <td><%= guest.fname %></td>
+                <td><%= guest.lname %></td>
                 <td><%= guest.job %></td>
-                <td><%= guest.company %></td>
-                <td><%= guest.url %></td>
+                <td>
+                    <% if (guest.company === null) { %>
+                    <%=   "none"   %>
+                    <% } else { %>
+                    <%=   guest.company   %>
+                    <% } %>
+                </td>
+                <td>
+                    <% if (guest.url === null) { %>
+                    <%=   "none"   %>
+                    <% } else { %>
+                    <%=   guest.url   %>
+                    <% } %>
+                </td>
                 <td>
                     <% if (guest.mail === "on") { %>
                     <%=   "checked"   %>
@@ -51,7 +64,13 @@
                     <%=   "unchecked"   %>
                     <% } %>
                 </td>
-                <td><%= guest.email %></td>
+                <td>
+                    <% if (guest.email === null) { %>
+                    <%=   "none"   %>
+                    <% } else { %>
+                    <%=   guest.email   %>
+                    <% } %>
+                </td>
                 <td>
                     <% if (guest.meet !== "other") { %>
                     <%=   guest.meet   %>
@@ -59,9 +78,14 @@
                     <%=   guest.other   %>
                     <% } %>
                 </td>
-                <td><%= guest.message %></td>
+                <td>
+                    <% if (guest.message === null) { %>
+                    <%=   "none"   %>
+                    <% } else { %>
+                    <%=   guest.message   %>
+                    <% } %>
+                </td>
                 <td><%= guest.format %></td>
-                <td><%= guest.timestamp.toLocaleString() %></td>
             </tr>
         <% }) %>
         </tbody>

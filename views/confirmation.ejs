@@ -18,8 +18,20 @@
     <h2>Submission Details</h2>
     <p>Name: <%= guest.fname %> <%= guest.lname %></p>
     <p>Job: <%= guest.job %></p>
-    <p>Company: <%= guest.company %></p>
-    <p>LinkedIn URL: <%= guest.url %></p>
+    <p>Company:
+        <% if (guest.company === "") { %>
+        <%=   "none"   %>
+        <% } else { %>
+        <%=   guest.company   %>
+        <% } %>
+    </p>
+    <p>LinkedIn URL:
+        <% if (guest.url === "") { %>
+        <%=   "none"   %>
+        <% } else { %>
+        <%=   guest.url   %>
+        <% } %>
+    </p>
     <p>Mailing List:
         <% if (guest.mail === "on") { %>
         <%=   "checked"   %>
@@ -27,7 +39,13 @@
         <%=   "unchecked"   %>
         <% } %>
     </p>
-    <p>Email: <%= guest.email %></p>
+    <p>Email:
+        <% if (guest.email === "") { %>
+        <%=   "none"   %>
+        <% } else { %>
+        <%=   guest.email   %>
+        <% } %>
+    </p>
     <p>Meet: 
         <% if (guest.meet !== "other") { %>
         <%=   guest.meet   %>
@@ -35,8 +53,13 @@
         <%=   guest.other   %>
         <% } %>
     </p>
-    <p>Message: <%= guest.message %></p>
+    <p>Message: 
+        <% if (guest.message === "") { %>
+        <%=   "none"   %>
+        <% } else { %>
+        <%=   guest.message   %>
+        <% } %>
+    </p>
     <p>Format: <%= guest.format %></p>
-    <p>Date/Time: <%= new Date().toLocaleString() %></p>
 </body>
 </html>

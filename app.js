@@ -16,8 +16,6 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
 
-const guestbook = [];
-
 const pool = mysql2.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -43,32 +41,53 @@ app.get('/contact-form', (req, res) => {
     res.render('form');
 });
 
-app.post('/submit-form', (req, res) => {
+app.post('/submit-form', async (req, res) => {
     
-    // Create a JSON object to store the order data
-    const guest = {
-        fname: req.body.fname,
-        lname: req.body.lname,
-        job: req.body.job,
-        company: req.body.company ? req.body.company : "none",
-        url: req.body.url ? req.body.url : "none",
-        mail: req.body.mail,
-        email: req.body.email ? req.body.email : "none",
-        meet: req.body.meet,
-        other: req.body.other,
-        message: req.body.message ? req.body.message : "none",
-        format: req.body.format,
-        timestamp: new Date()
-    };
+    const guest = req.body;
 
-    // Add order object to orders array
-    guestbook.push(guest);
-    
+    const firstName = guest.fname || null;
+    const lastName = guest.lname || null;
+    const job = guest.job || null;
+    const company = guest.company || null;
+    const url = guest.url || null;
+    const mail = guest.mail || null;
+    const email = guest.email || null;
+    const meet = guest.meet || null;
+    const other = guest.other || null;
+    const message = guest.message || null;
+    const format = guest.format || null;
+
+    const params = [
+        firstName,
+        lastName,
+        job,
+        company,
+        url,
+        mail,
+        email,
+        meet,
+        other,
+        message,
+        format
+    ];
+
+    const sql = `INSERT INTO contacts (fname, lname, job,
+                 company, url, mail, email, meet, other, 
+                 message, format)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    const result = await pool.execute(sql, params);
+    console.log("Contact inserted with ID: ", result[0].insertId);
+
     res.render('confirmation', { guest });
 });
 
-app.get('/admin', (req, res) => {
-    res.render('admin', { guestbook });
+app.get('/admin', async (req, res) => {
+
+    let sql = "SELECT * FROM contacts ORDER BY fname";
+    const guestbook = await pool.query(sql);
+
+    res.render('admin', { guestbook: guestbook[0] });
 });
 
 app.listen(PORT, () => {
