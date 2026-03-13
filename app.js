@@ -41,6 +41,9 @@ app.get('/contact-form', (req, res) => {
     res.render('form');
 });
 
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio');
+});
 app.post('/submit-form', async (req, res) => {
     
     const guest = req.body;

@@ -1,3 +1,19 @@
+body {
+    font-size: 18px;
+    background-color: darkgrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    background-color: rgb(227, 226, 226);
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+}
+
 nav {
     display: flex;
     align-items: stretch;
