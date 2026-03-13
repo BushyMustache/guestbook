@@ -4,6 +4,8 @@ import mysql2 from 'mysql2';
 
 import dotenv from 'dotenv';
 
+import {validateForm} from './validation.js';
+
 dotenv.config();
 
 const app = express();
@@ -47,6 +49,12 @@ app.get('/portfolio', (req, res) => {
 app.post('/submit-form', async (req, res) => {
     
     const guest = req.body;
+
+    const valid = validateForm(guest);
+    if (!valid.isValid) {
+        res.render('form', {errors: valid.errors});
+        return;
+    }
 
     const firstName = guest.fname || null;
     const lastName = guest.lname || null;

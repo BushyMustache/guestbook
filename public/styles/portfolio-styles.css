@@ -7,11 +7,42 @@ h1 {
     text-align: center;
 }
 
-section {
+div {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'h2 img'
+        'des img'
+        'rle img'
+        'lnk img';
+
     background-color: rgb(227, 226, 226);
     border: 1px solid black;
     padding: 20px;
     margin: 10px;
+}
+
+h2 {
+    grid-area: h2;
+}
+
+.description {
+    grid-area: des;
+}
+
+.role {
+    grid-area: rle;
+}
+
+.link {
+    grid-area: lnk;
+}
+
+img {
+    width: 70%;
+    grid-area: img;
+    margin-left: 20px;
 }
 
 nav {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook Contact Form</title>
     <link rel="stylesheet" href="styles/guest-styles.css">
-    <script src="js/guestbook.js" defer></script>
+    <!-- <script src="js/guestbook.js" defer></script> -->
     <link rel="icon" href="images/form-icon.png">
 </head>
 <body>
@@ -17,6 +17,13 @@
         <a class="nav-button" href="https://github.com/BushyMustache/guestbook" role="button">Github Repo</a>
         <a class="nav-button" href="https://www.linkedin.com/in/john-matheu-baltazar-6233263a5/" role="button">LinkedIn Profile</a>
     </nav>
+
+    <% if (typeof errors != 'undefined') { %>
+        <% errors.forEach(error => { %>
+            <p><%= error %></p>
+        <% }); %>
+    <% } %>
+
     <h1>Contact Form</h1>
     <form id="contact-form" action="/submit-form" method="post">
         <div id="fname-section">
@@ -68,7 +75,9 @@
                 <span class="err" id="err-meet">
                     please select an option
                 </span>
-                <select id="meet" name="meet" onclick=otherSelected()>
+                <!-- Was an attribute for the select tag below -->
+                <!-- onclick=otherSelected() -->
+                <select id="meet" name="meet">
                     <option value="none">Please Select</option>
                     <option value="hackathon">Hackathon</option>
                     <option value="internship">Internship</option>
@@ -91,7 +100,9 @@
         </div>
         <div id="mail-section">
             <label for="mail">
-                <input type="checkbox" id="mail" name="mail" onclick=mailChecked()>
+                <!-- Was an attribute for the select tag below -->
+                <!-- onclick=mailChecked() -->
+                <input type="checkbox" id="mail" name="mail">
                 Please add me to your mailing list
             </label>
         </div>

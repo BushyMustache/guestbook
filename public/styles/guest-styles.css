@@ -125,7 +125,7 @@ button {
 }
 
 #email-section, #other-section {
-    display: none;
+    display: block;
 }
 
 .err {
@@ -149,4 +149,9 @@ nav {
     font-size: 1rem;
     margin-left: 4.5rem;
     margin-right: 6rem;
+}
+p {
+    margin-left: 30px;
+    color: red;
+    display: inline-block;
 }
