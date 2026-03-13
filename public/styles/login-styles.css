@@ -1,0 +1,44 @@
+html {
+    background-color: grey;
+}
+
+body {
+    padding: 50px;
+}
+
+#login-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    width: 50%;
+    padding: 3rem;
+    top: 20%;
+    transform: translate(30%);
+    font-size: 20px;
+}
+
+#password-section {
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    background-color: grey;
+    border-color: grey;
+    padding: 0.5rem 0.75rem;
+    border-radius: .25rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    width: 20%;
+}
+
+p {
+    margin-left: 30px;
+    color: red;
+    display: inline-block;
+}

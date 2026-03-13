@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 export function validateForm(data) {
     console.log(data);
 
@@ -39,6 +43,25 @@ export function validateForm(data) {
     }
 
     console.log(errors);
+
+    return {
+        isValid: errors.length === 0,
+        errors
+    };
+}
+
+export function validateUserInfo(data) {
+    console.log(data);
+
+    const errors = [];
+
+    if (data.username.trim() != process.env.Username) {
+        errors.push("Username incorrect");
+    }
+
+    if (data.password.trim() != process.env.Password) {
+        errors.push("Password incorrect");
+    }
 
     return {
         isValid: errors.length === 0,

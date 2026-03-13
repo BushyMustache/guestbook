@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 
 import {validateForm} from './validation.js';
 
+import {validateUserInfo} from './validation.js';
+ 
 dotenv.config();
 
 const app = express();
@@ -93,7 +95,18 @@ app.post('/submit-form', async (req, res) => {
     res.render('confirmation', { guest });
 });
 
-app.get('/admin', async (req, res) => {
+app.get('/admin', (req, res) => {
+    res.render('login');
+});
+
+app.post('/admin-login', async (req, res) => {
+    const user = req.body;
+
+    const valid = validateUserInfo(user);
+    if (!valid.isValid) {
+        res.render('login', {errors: valid.errors});
+        return;
+    }
 
     let sql = "SELECT * FROM contacts ORDER BY fname";
     const guestbook = await pool.query(sql);
